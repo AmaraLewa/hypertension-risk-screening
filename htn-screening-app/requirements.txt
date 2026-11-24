@@ -1,0 +1,13 @@
+# Hypertension Risk Screening System - runtime dependencies
+# Pinned to the versions the model bundle was trained with (results/run_summary.json)
+# and the versions this app was tested against. Requires Python 3.13.
+# scikit-learn MUST stay at 1.6.1: model_bundle.joblib is a scikit-learn 1.6.1 pickle.
+streamlit==1.67.0
+scikit-learn==1.6.1
+imbalanced-learn==0.14.2
+numpy==2.4.6
+pandas==2.2.3
+scipy==1.18.1
+shap==0.54.1
+joblib==1.6.0
+plotly==7.1.0

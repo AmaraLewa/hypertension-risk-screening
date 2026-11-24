@@ -1,0 +1,5 @@
+feature,mean_abs_shap
+num__age,0.11581747396919242
+num__whr,0.09230889334807856
+num__cigarettes_per_day,0.024357466557503614
+cat__alcohol_frequency_Daily or almost daily,0.0015406778046429038

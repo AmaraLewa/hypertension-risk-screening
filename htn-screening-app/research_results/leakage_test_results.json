@@ -1,0 +1,37 @@
+{
+  "data_file": "data/nhanes_cohort.csv",
+  "n": 812,
+  "events": 43,
+  "seed": 20260101,
+  "tests": {
+    "0_control": {
+      "expected": "pass",
+      "raised": false,
+      "admitted": 21,
+      "result": "PASS",
+      "message": ""
+    },
+    "A_unknown_name": {
+      "expected": "column excluded and named",
+      "correlation_with_outcome": 0.978,
+      "excluded": true,
+      "named_in_log": true,
+      "result": "PASS"
+    },
+    "B_contaminated_predictor": {
+      "expected": "run stopped",
+      "correlation_with_outcome": 0.971,
+      "raised": true,
+      "message": "TARGET LEAKAGE: [('pulse_bpm', 0.971)] correlate with the outcome at >= 0.95. A predictor this close to the label is almost certainly derived from it. Refusing to train.",
+      "result": "PASS"
+    },
+    "C_noisy_contamination": {
+      "expected": "records the limit of the 0.95 alarm",
+      "labels_flipped": 17,
+      "correlation_with_outcome": 0.818,
+      "caught_at_0.95": false,
+      "caught_at_0.80": true,
+      "result": "MISSED at 0.95 (known limitation)"
+    }
+  }
+}

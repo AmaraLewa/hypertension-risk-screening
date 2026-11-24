@@ -1,0 +1,178 @@
+{
+  "data_file": "data/nhanes_cohort.csv",
+  "n_total": 812,
+  "n_events": 43,
+  "prevalence": 0.05295566502463054,
+  "selected_model": "Support Vector Machine",
+  "decision_threshold": 0.04340401747306985,
+  "cv_results": {
+    "Clinical baseline (age, sex, BMI)": {
+      "nested_pr_auc_mean": 0.12192642782281024,
+      "nested_pr_auc_std": 0.022252438260138133,
+      "nested_roc_auc_mean": 0.6816621499548329,
+      "nested_roc_auc_std": 0.06743657686214762,
+      "best_params": {
+        "clf__C": "1.0"
+      },
+      "is_tree": false,
+      "is_baseline": true
+    },
+    "Logistic Regression": {
+      "nested_pr_auc_mean": 0.14597630775324444,
+      "nested_pr_auc_std": 0.06616250551249027,
+      "nested_roc_auc_mean": 0.6551425990450379,
+      "nested_roc_auc_std": 0.08042150163253553,
+      "best_params": {
+        "clf__C": "10.0"
+      },
+      "is_tree": false,
+      "is_baseline": false
+    },
+    "Elastic Net Logistic": {
+      "nested_pr_auc_mean": 0.13559045438885364,
+      "nested_pr_auc_std": 0.06546381840336908,
+      "nested_roc_auc_mean": 0.654006968641115,
+      "nested_roc_auc_std": 0.07880656080030637,
+      "best_params": {
+        "clf__C": "1.0",
+        "clf__l1_ratio": "0.85"
+      },
+      "is_tree": false,
+      "is_baseline": false
+    },
+    "Random Forest": {
+      "nested_pr_auc_mean": 0.09633008866745549,
+      "nested_pr_auc_std": 0.04084406605055411,
+      "nested_roc_auc_mean": 0.5708607562266098,
+      "nested_roc_auc_std": 0.07923344943531507,
+      "best_params": {
+        "clf__max_depth": "4",
+        "clf__min_samples_leaf": "5",
+        "clf__n_estimators": "300"
+      },
+      "is_tree": true,
+      "is_baseline": false
+    },
+    "XGBoost": {
+      "nested_pr_auc_mean": 0.10187346846680799,
+      "nested_pr_auc_std": 0.0716674119895453,
+      "nested_roc_auc_mean": 0.5489869660601367,
+      "nested_roc_auc_std": 0.11276194764587101,
+      "best_params": {
+        "clf__learning_rate": "0.1",
+        "clf__max_depth": "4",
+        "clf__subsample": "0.8"
+      },
+      "is_tree": true,
+      "is_baseline": false
+    },
+    "LightGBM": {
+      "nested_pr_auc_mean": 0.0951038218947924,
+      "nested_pr_auc_std": 0.043979097976986244,
+      "nested_roc_auc_mean": 0.5592592592592592,
+      "nested_roc_auc_std": 0.09928986199816084,
+      "best_params": {
+        "clf__learning_rate": "0.1",
+        "clf__min_child_samples": "20",
+        "clf__num_leaves": "7"
+      },
+      "is_tree": true,
+      "is_baseline": false
+    },
+    "Support Vector Machine": {
+      "nested_pr_auc_mean": 0.14731190428031318,
+      "nested_pr_auc_std": 0.08270508170873783,
+      "nested_roc_auc_mean": 0.6064395405858819,
+      "nested_roc_auc_std": 0.12027554709873406,
+      "best_params": {
+        "clf__C": "10.0",
+        "clf__gamma": "0.01"
+      },
+      "is_tree": false,
+      "is_baseline": false
+    },
+    "k-Nearest Neighbours": {
+      "nested_pr_auc_mean": 0.08079568622186008,
+      "nested_pr_auc_std": 0.03091566432403176,
+      "nested_roc_auc_mean": 0.5470512324170861,
+      "nested_roc_auc_std": 0.07870663687336382,
+      "best_params": {
+        "clf__n_neighbors": "21",
+        "clf__weights": "distance"
+      },
+      "is_tree": false,
+      "is_baseline": false
+    },
+    "_shap_top1_agreement": 1.0,
+    "_shap_stability_top10_overlap": 1.0
+  },
+  "test_metrics": {
+    "threshold": 0.0434,
+    "accuracy": 0.26993865030674846,
+    "precision": 0.0703125,
+    "recall": 1.0,
+    "f1": 0.13138686131386862,
+    "roc_auc": 0.8066378066378066,
+    "pr_auc": 0.15821019136808612,
+    "brier": 0.05115013318961448,
+    "calibration_slope": 5.947126779807315,
+    "calibration_intercept": 13.787102812865916,
+    "specificity": 0.22727272727272727,
+    "tp": 9,
+    "fp": 119,
+    "tn": 35,
+    "fn": 0,
+    "uncalibrated_slope": 1.1865705029897187,
+    "uncalibrated_intercept": -2.853671513958048,
+    "uncalibrated_brier": 0.20678562938804076,
+    "calibration_applied": true,
+    "fraction_flagged": 0.7852760736196319,
+    "net_benefit_at_threshold": 0.020194274028629854,
+    "threshold_in_benefit_band": true,
+    "benefit_band": [
+      0.04,
+      0.07
+    ]
+  },
+  "leakage_columns_excluded": [
+    "sbp_1",
+    "dbp_1",
+    "sbp_2",
+    "dbp_2",
+    "sbp_3",
+    "dbp_3",
+    "sbp_4",
+    "dbp_4",
+    "mean_sbp",
+    "mean_dbp",
+    "on_bp_medication",
+    "prior_htn_diagnosis",
+    "prior_bp_check"
+  ],
+  "n_features_numeric": 13,
+  "n_features_categorical": 8,
+  "shap_completed": true,
+  "library_versions": {
+    "python": "3.13.18",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.6.0",
+    "shap": "0.54.1",
+    "imbalanced-learn": "0.14.2",
+    "pandas": "2.2.3",
+    "numpy": "2.4.6"
+  },
+  "max_params": 4,
+  "selected_encoded_features": [
+    "num__age",
+    "num__whr",
+    "num__cigarettes_per_day",
+    "cat__alcohol_frequency_Daily or almost daily"
+  ],
+  "selected_variables": [
+    "age",
+    "alcohol_frequency",
+    "cigarettes_per_day",
+    "whr"
+  ]
+}
