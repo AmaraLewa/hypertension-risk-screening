@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Streamlit secrets (none are needed, but never commit them)
+.streamlit/secrets.toml
+
+# Research data that must NOT be published
+# Participant-level cohort files and unused training checkpoints stay private.
+nhanes_cohort*.csv
+*cohort*.csv
+checkpoints/
+logs/
+*.zip
+*.pdf
+data/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
